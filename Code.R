@@ -173,7 +173,7 @@ legend("topright",
        col    = c("black", "gray", "steelblue", "darkorange", "darkgreen"),
        lty    = c(1, 2, 2, 2, 2), lwd = c(2, 1.5, 1.5, 1.5, 1.5), bty = "n")
 
-#12-month forward forecast
+#12 month forward forecast
 m_arimax_full  <- Arima(diff_yield, order = c(0, 0, 1), xreg = diff_brent)
 brent_future   <- rep(mean(tail(as.numeric(diff_brent), 24)), 12)
 fc_forward     <- forecast(m_arimax_full, h = 12,
